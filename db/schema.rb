@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_05_155157) do
+ActiveRecord::Schema.define(version: 2021_03_05_161826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,17 @@ ActiveRecord::Schema.define(version: 2021_03_05_155157) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "job_offers", force: :cascade do |t|
+    t.text "description"
+    t.date "start_date"
+    t.date "end_date"
+    t.boolean "is_active", default: false
+    t.bigint "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_job_offers_on_company_id"
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "name"
     t.string "last_name"
@@ -54,4 +65,5 @@ ActiveRecord::Schema.define(version: 2021_03_05_155157) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "job_offers", "companies"
 end

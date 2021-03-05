@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @job_offer.description %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @job_offer.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @job_offer.end_date %>
+</p>
+
+<p>
+  <strong>Is active:</strong>
+  <%= @job_offer.is_active %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @job_offer.company %>
+</p>
+
+<%
+=begin%>
+ <%= link_to 'Edit', edit_job_offer_path(@job_offer) %> |
+<%= link_to 'Back', job_offers_path %> 
+<%
+=end%>

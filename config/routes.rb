@@ -6,4 +6,9 @@ Rails.application.routes.draw do
 
   #DEVISE NECESITA UN ROOT
   #root to: "home#index"
+
+  resources :companies do
+    resources :job_offers
+  end
+  
 end
