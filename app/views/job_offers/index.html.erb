@@ -22,9 +22,13 @@
         <td><%= job_offer.end_date %></td>
         <td><%= job_offer.is_active %></td>
         <td><%= job_offer.company.name %></td>
-        <td><%= link_to 'Show', company_job_offer_path(@company.id, job_offer) %></td>
+        <%
+=begin%>
+ <td><%= link_to 'Show', company_job_offer_path(@company.id, job_offer) %></td>
         <td><%= link_to 'Edit', edit_company_job_offer_path(@company.id, job_offer) %></td>
-        <td><%= link_to 'Destroy', company_job_offer_path(@company.id, job_offer), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', company_job_offer_path(@company.id, job_offer), method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+<%
+=end%>
       </tr>
     <% end %>
   </tbody>
