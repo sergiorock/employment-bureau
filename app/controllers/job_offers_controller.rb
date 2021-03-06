@@ -28,7 +28,7 @@ class JobOffersController < ApplicationController
 
     respond_to do |format|
       if @job_offer.save
-        format.html { redirect_to company_job_offers_url, notice: "Job offer was successfully created." }
+        format.html { redirect_to companies_url, notice: "Job offer was successfully created." }
         format.json { render :show, status: :created, location: @job_offer }
       else
         format.html { render :new, status: :unprocessable_entity }
