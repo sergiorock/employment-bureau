@@ -1,16 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Companies</h1>
+<h1>Empresas</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Cuit</th>
-      <th>Province</th>
-      <th>City</th>
-      <th>Address</th>
-      <th>Phone</th>
+      <th>Nombre</th>
+      <%
+=begin%>
+ <th>Cuit</th> 
+<%
+=end%>
+      <th>Provincia</th>
+      <th>Ciudad</th>
+      <th>Dirección</th>
+      <th>Teléfono</th>
       <th>Email</th>
       <th colspan="3"></th>
     </tr>
@@ -20,15 +24,37 @@
     <% @companies.each do |company| %>
       <tr>
         <td><%= company.name %></td>
-        <td><%= company.cuit %></td>
+        <%
+=begin%>
+ <td><%= company.cuit %></td> 
+<%
+=end%>
         <td><%= company.province %></td>
         <td><%= company.city %></td>
         <td><%= company.address %></td>
         <td><%= company.phone %></td>
         <td><%= company.email %></td>
-        <td><%= link_to 'Show', company %></td>
-        <td><%= link_to 'Edit', edit_company_path(company) %></td>
-        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to company do %>
+            <button class="btn btn-sm btn-info btn-tooltip" type="button" data-toggle="tooltip" data-placement="top" title="Ver" data-container="body" data-animation="true">
+              <i class="fa fa-eye"></i>
+            </button>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to edit_company_path(company) do %>
+            <button class="btn btn-sm btn-warning btn-tooltip" type="button" data-toggle="tooltip" data-placement="top" title="Editar" data-container="body" data-animation="true">
+              <i class="fa fa-edit"></i>
+            </button>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to company, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <button class="btn btn-sm btn-danger btn-tooltip" type="button" data-toggle="tooltip" data-placement="top" title="Eliminar" data-container="body" data-animation="true">
+              <i class="fa fa-trash"></i>
+            </button>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
