@@ -5,6 +5,7 @@ class JobOffersController < ApplicationController
   # GET /job_offers or /job_offers.json
   def index
     @job_offers = JobOffer.all
+    @job_offers = @job_offers.paginate(page: params[:page]).order(created_at: :desc)
   end
 
   # GET /job_offers/1 or /job_offers/1.json
