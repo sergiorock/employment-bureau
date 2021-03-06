@@ -1,39 +1,62 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @company.name %>
-</p>
+<div class="row">
+  <div class="col-3">
+    <p>
+      <strong>Name:</strong>
+      <%= @company.name %>
+    </p>
 
-<p>
-  <strong>Cuit:</strong>
-  <%= @company.cuit %>
-</p>
+    <p>
+      <strong>Cuit:</strong>
+      <%= @company.cuit %>
+    </p>
 
-<p>
-  <strong>Province:</strong>
-  <%= @company.province %>
-</p>
+    <p>
+      <strong>Province:</strong>
+      <%= @company.province %>
+    </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @company.city %>
-</p>
+    <p>
+      <strong>City:</strong>
+      <%= @company.city %>
+    </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @company.address %>
-</p>
+    <p>
+      <strong>Address:</strong>
+      <%= @company.address %>
+    </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @company.phone %>
-</p>
+    <p>
+      <strong>Phone:</strong>
+      <%= @company.phone %>
+    </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @company.email %>
-</p>
+    <p>
+      <strong>Email:</strong>
+      <%= @company.email %>
+    </p>
 
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+    <%= link_to new_company_job_offer_path(@company) do %>
+      <button class="btn btn-warning btn-sm">Crear Oferta de Empleo</button>
+    <% end %>
+  </div>
+  <div class="col-9">
+    <% if @company.job_offers.count > 0%>
+      <% @company.job_offers.each do |job_offer| %>
+        <%= link_to job_offer do%>
+          <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <h5 class="card-title"><%= job_offer.description.truncate(45, separator: ' ') %></h5>
+              <h6 class="card-subtitle mb-2 text-muted"><%= job_offer.company.name %></h6>
+              <p class="card-text"><%= job_offer.company.province %>, <%= job_offer.company.city %></p>
+              <a href="#" class="card-link"><%= job_offer.start_date %></a>
+              <a href="#" class="card-link"><%= job_offer.end_date %></a>
+            </div>
+          </div>
+          <% end %>
+        <br>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 class JobOffersController < ApplicationController
-  before_action :set_company, only: [:show, :edit, :update, :destroy, :create, :new]
+  before_action :set_company, only: [:edit, :update, :destroy, :create, :new]
   before_action :set_job_offer, only: %i[ show edit update destroy ]
 
   # GET /job_offers or /job_offers.json
@@ -9,6 +9,7 @@ class JobOffersController < ApplicationController
 
   # GET /job_offers/1 or /job_offers/1.json
   def show
+    @company = @job_offer.company_id
   end
 
   # GET /job_offers/new

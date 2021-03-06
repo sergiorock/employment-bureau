@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   resources :companies do
-    resources :job_offers
+    resources :job_offers, :except => [:index]
   end
 
 end
