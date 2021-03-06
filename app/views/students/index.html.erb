@@ -5,17 +5,17 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Nombre</th>
       <th>Apellido</th>
+      <th>Nombre</th>
       <%
 =begin%>
- <th>Document type</th> 
+ <th>Document type</th>
 <%
 =end%>
       <th>Documento</th>
       <%
 =begin%>
- <th>Birthdate</th> 
+ <th>Birthdate</th>
 <%
 =end%>
       <th>Email</th>
@@ -23,7 +23,7 @@
       <th>Año</th>
       <%
 =begin%>
- <th>Experience</th> 
+ <th>Experience</th>
 <%
 =end%>
       <th>Activo</th>
@@ -34,17 +34,17 @@
   <tbody>
     <% @students.each do |student| %>
       <tr>
-        <td><%= student.name %></td>
         <td><%= student.last_name %></td>
+        <td><%= student.name %></td>
         <%
 =begin%>
- <td><%= student.document_type %></td> 
+ <td><%= student.document_type %></td>
 <%
 =end%>
         <td><%= student.document_number %></td>
         <%
 =begin%>
- <td><%= student.birthdate %></td> 
+ <td><%= student.birthdate %></td>
 <%
 =end%>
         <td><%= student.email %></td>
@@ -52,7 +52,7 @@
         <td><%= student.career_year %></td>
         <%
 =begin%>
- <td><%= student.experience %></td> 
+ <td><%= student.experience %></td>
 <%
 =end%>
         <td><%= student.is_active %></td>
@@ -81,4 +81,8 @@
     <% end %>
   </tbody>
 </table>
+
+<div class="digg_pagination float-right">
+  <%= will_paginate @students, :container => false %>
+</div>
 
