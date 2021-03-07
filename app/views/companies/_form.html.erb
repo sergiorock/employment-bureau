@@ -11,42 +11,68 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+<div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :nombre %>
+        <%= form.text_field :name, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label "CUIT" %>
+        <%= form.text_field :cuit, class: "form-control" %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :cuit %>
-    <%= form.text_field :cuit %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :provincia %>
+        <%= form.text_field :province, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :ciudad %>
+        <%= form.text_field :city, class: "form-control" %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :province %>
-    <%= form.text_field :province %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :dirección %>
+        <%= form.text_field :address, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :teléfono %>
+        <%= form.text_field :phone, class: "form-control" %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :email %>
+        <%= form.text_field :emailº, class: "form-control" %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="actions">
+        <%= form.submit "Guardar", class: "btn btn-default" %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
+  <br><br><br>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+  <% end %>
