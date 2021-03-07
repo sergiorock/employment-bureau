@@ -45,7 +45,7 @@ class JobOffersController < ApplicationController
   def update
     respond_to do |format|
       if @job_offer.update(job_offer_params)
-        format.html { redirect_to company_job_offers_url, notice: "Job offer was successfully updated." }
+        format.html { redirect_to company_job_offer_url, notice: "Job offer was successfully updated." }
         format.json { render :show, status: :ok, location: @job_offer }
       else
         format.html { render :edit, status: :unprocessable_entity }
