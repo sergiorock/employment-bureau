@@ -3,7 +3,11 @@ class StudentsController < ApplicationController
 
   # GET /students or /students.json
   def index
-    @students = Student.all
+    if current_admin
+      @students = Student.all
+    else
+      @students = Student.all.active
+    end
     @students = @students.paginate(page: params[:page]).order(last_name: :asc).order(name: :asc)
   end
 

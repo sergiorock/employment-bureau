@@ -9,6 +9,8 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1 or /companies/1.json
   def show
+    @job_offers = @company.job_offers.all
+    @job_offers = @job_offers.paginate(page: params[:page]).order(created_at: :desc)
   end
 
   # GET /companies/new
