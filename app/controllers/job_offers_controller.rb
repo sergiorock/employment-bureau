@@ -4,7 +4,11 @@ class JobOffersController < ApplicationController
 
   # GET /job_offers or /job_offers.json
   def index
-    @job_offers = JobOffer.all
+    if current_admin
+      @job_offers = JobOffer.all
+    else
+      @job_offers = JobOffer.all.active
+    end
     @job_offers = @job_offers.paginate(page: params[:page]).order(created_at: :desc)
   end
 
