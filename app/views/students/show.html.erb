@@ -1,54 +1,73 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @student.name %>
-</p>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card card-user">
+      <div class="card-header">
+        <h3 class="text-warning py-1">Detalle del Alumno</h3>
+      </div>
+      <div class="card-body">
+        <p class="show-info-text">
+          <strong class="text-primary">Nombre: </strong>
+          <%= @student.name %>
+        </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @student.last_name %>
-</p>
+        <p class="show-info-text">
+          <strong class="text-primary">Apellido: </strong>
+          <%= @student.last_name.capitalize %>
+        </p>
 
-<p>
-  <strong>Document type:</strong>
-  <%= @student.document_type %>
-</p>
+        <p class="show-info-text">
+          <strong class="text-primary">Tipo de Documento: </strong>
+          <%= @student.document_type %>
+        </p>
 
-<p>
-  <strong>Document number:</strong>
-  <%= @student.document_number %>
-</p>
+        <p class="show-info-text">
+          <strong class="text-primary">Nº de Documento: </strong>
+          <%= @student.document_number %>
+        </p>
 
-<p>
-  <strong>Birthdate:</strong>
-  <%= @student.birthdate %>
-</p>
+        <p class="show-info-text">
+          <strong class="text-primary">Fecha de Nacimiento: </strong>
+            <%= @student.birthdate %>
+        </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @student.email %>
-</p>
+        <p class="show-info-text">
+          <strong class="text-primary">Email: </strong>
+          <%= @student.email %>
+        </p>
 
-<p>
-  <strong>Career:</strong>
-  <%= @student.career %>
-</p>
+        <p class="show-info-text">
+          <strong class="text-primary">Carrera: </strong>
+          <%= @student.career %>
+        </p>
 
-<p>
-  <strong>Career year:</strong>
-  <%= @student.career_year %>
-</p>
+        <p class="show-info-text">
+          <strong class="text-primary">Año: </strong>
+          <%= @student.career_year %>
+        </p>
 
-<p>
-  <strong>Experience:</strong>
-  <%= @student.experience %>
-</p>
+        <p class="show-info-text">
+          <strong class="text-primary">Email: </strong>
+          <%= @student.email %>
+        </p>
 
-<p>
-  <strong>Is active:</strong>
-  <%= @student.is_active %>
-</p>
+        <p class="show-info-text">
+          <strong class="text-primary">Experiencia: </strong>
+          <%= @student.experience %>
+        </p>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
+        <p class="show-info-text">
+          <strong class="text-primary">Activo: </strong>
+          <%= @student.is_active %>
+        </p>
+
+      </div>
+    </div>
+    <br>
+    <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
+  </div>
+
+</div>
+
