@@ -2,7 +2,7 @@
 <% if @job_offers.count > 0 %>
   <div class="row">
     <% @job_offers.each do |job_offer| %>
-      <%= link_to job_offer do%>
+      <%= link_to company_job_offer_path(job_offer.company.id, job_offer) do%>
         <div class="col-6">
             <div class="card" style="width: 100%;">
               <div class="card-body">
@@ -36,7 +36,7 @@
                         </div>
                         <div class="col-1">
                           <p class="text-success">
-                            <i class="fa fa-check text-success" data-toggle="tooltip" data-placement="top" title="Habilitar Oferta" data-container="body" data-animation="true"></i>
+                            <i class="fa fa-check text-success" data-toggle="tooltip" data-placement="top" title="Aprobar Oferta" data-container="body" data-animation="true"></i>
                           </p>
                         </div>
                       </div>
