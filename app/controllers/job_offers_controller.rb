@@ -32,7 +32,7 @@ class JobOffersController < ApplicationController
 
     respond_to do |format|
       if @job_offer.save
-        format.html { redirect_to company_job_offer_url(@company, @job_offer), notice: "La Oferta laboral fue creada exitosamente." }
+        format.html { redirect_to company_url(@company), notice: "La Oferta laboral fue creada exitosamente, sin embargo deberás esperar que un administrador la active." }
         format.json { render :show, status: :created, location: @job_offer }
       else
         format.html { render :new, status: :unprocessable_entity }

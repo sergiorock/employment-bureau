@@ -30,7 +30,7 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.save
-        format.html { redirect_to @student, notice: "El Alumno fue creado exitosamente." }
+        format.html { redirect_to root_path, notice: "El Alumno fue creado exitosamente, sin embargo deberás esperar que un administrador active tu cuenta." }
         format.json { render :show, status: :created, location: @student }
       else
         format.html { render :new, status: :unprocessable_entity }
