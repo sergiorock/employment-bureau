@@ -54,7 +54,7 @@
       <div class="form-group">
         <%= form.label "Fecha de Nacimiento" %>
         <div class="row" style="padding: 0 15px;">
-          <%= form.date_select :birthdate, { order: [:day, :month, :year] }, { class:"form-control col"}%>
+          <%= form.date_select :birthdate, { order: [:day, :month, :year], start_year: Time.now.year-100, end_year: Time.now.year }, { class:"form-control col"}%>
         </div>
       </div>
     </div>

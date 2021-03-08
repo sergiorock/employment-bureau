@@ -12,19 +12,42 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label "Fecha de Inicio *" %>
+        <div class="row" style="padding: 0 15px;">
+          <%= form.date_select :start_date, { order: [:day, :month, :year], start_year: Time.now.year,
+             end_year: Time.now.year }, { class:"form-control col"}%>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label "Fecha de Finalización" %>
+        <div class="row" style="padding: 0 15px;">
+          <%= form.date_select :end_date, { order: [:day, :month, :year], include_blank: true, start_year: Time.now.year,
+             max_years_allowed: 5 }, { class:"form-control col"}%>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.date_select :start_date %>
+   <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= form.label "Descripción * "%>
+        <%= form.text_area :description, class: "form-control" %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :end_date %>
-    <%= form.date_select :end_date %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="actions">
+        <%= form.submit "Guardar", class: "btn btn-default" %>
+      </div>
+    </div>
   </div>
 
   <%
@@ -36,7 +59,4 @@
 <%
 =end%>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
