@@ -225,6 +225,9 @@ es:
     first_name: "Nombre"
     last_name: "Apellido"
     location: "Ubicación"
+    document_type: "Tipo de Documento"
+    document_number: "Número de Documento"
+    experience: "Experiencia"
   # Paginate Translations
   will_paginate:
     next_label: →

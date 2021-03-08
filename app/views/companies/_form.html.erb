@@ -1,8 +1,6 @@
 <%= form_with(model: company, local: true) do |form| %>
   <% if company.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
-
+    <div id="error_explanation" class="alert alert-danger">
       <ul>
       <% company.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -14,13 +12,13 @@
 <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <%= form.label :nombre %>
+        <%= form.label "Nombre *" %>
         <%= form.text_field :name, class: "form-control" %>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <%= form.label "CUIT" %>
+        <%= form.label "CUIT *" %>
         <%= form.text_field :cuit, class: "form-control" %>
       </div>
     </div>
@@ -29,13 +27,13 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <%= form.label :provincia %>
+        <%= form.label "Provincia *" %>
         <%= form.text_field :province, class: "form-control" %>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <%= form.label :ciudad %>
+        <%= form.label "Ciudad *" %>
         <%= form.text_field :city, class: "form-control" %>
       </div>
     </div>
@@ -44,13 +42,13 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <%= form.label :dirección %>
+        <%= form.label "Dirección *" %>
         <%= form.text_field :address, class: "form-control" %>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <%= form.label :teléfono %>
+        <%= form.label "Teléfono *" %>
         <%= form.text_field :phone, class: "form-control" %>
       </div>
     </div>
@@ -59,7 +57,7 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <%= form.label :email %>
+        <%= form.label "Email *" %>
         <%= form.text_field :emailº, class: "form-control" %>
       </div>
     </div>
