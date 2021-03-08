@@ -47,44 +47,50 @@
     <%= link_to company_job_offer_path(@company, job_offer) do%>
     <div class="card" style="width: 100%;">
       <div class="card-body">
-        <h5 class="card-title"><%= job_offer.description.truncate(45, separator: ' ') %></h5>
-        <h6 class="card-subtitle mb-2 text-muted"><%= job_offer.company.name %></h6>
-        <small class="card-text"><%= job_offer.company.province %>, <%= job_offer.company.city %></small>
-        <br>
-        <small><%= job_offer.start_date.strftime("Publicada: %d/%m/%Y") %></small> -
-        <small><%= job_offer.start_date.strftime("Expira: %d/%m/%Y") %></small>
-        <% if current_admin %>
-        <td class="text-center" style="cursor: pointer">
-          <% if job_offer.is_active %>
-          <p class="text-success">
-            Oferta Activa
-          </p>
-          <div class="row">
-            <div class="col-11">
-            </div>
-            <div class="col-1">
-              <p class="text-danger">
-                <i class="fa fa-times text-danger" data-toggle="tooltip" data-placement="top" title="Deshabilitar Oferta" data-container="body" data-animation="true"></i>
-              </p>
-            </div>
+            <%= link_to company_job_offer_path(job_offer.company.id, job_offer) do%>
+            <h5 class="card-title"><%= job_offer.description.truncate(45, separator: ' ') %></h5>
+            <% end %>
+            <h6 class="card-subtitle mb-2 text-muted"><%= job_offer.company.name %></h6>
+            <small class="card-text"><%= job_offer.company.province %>, <%= job_offer.company.city %></small>
+            <br>
+            <small><%= job_offer.start_date.strftime("Publicada: %d/%m/%Y") %></small> -
+            <small><%= job_offer.start_date.strftime("Expira: %d/%m/%Y") %></small>
+            <% if current_admin %>
+              <div style="cursor: pointer">
+                <% if job_offer.is_active %>
+                  <p class="text-success">
+                    Oferta Activa
+                  </p>
+                  <div class="row">
+                    <div class="col-9">
+                    </div>
+
+                    <div class="col-3">
+                      <%= form_for ([job_offer.company, job_offer]) do |j| %>
+                      <%= j.hidden_field :is_active, :value=>false %>
+                      <%= j.submit "Deshabilitar", class: "btn btn-sm btn-danger" %>
+                      <% end %>
+                    </div>
+                  </div>
+
+                <% else %>
+                  <p class="text-danger">
+                    Oferta Pendiente de aprobación
+                  </p>
+                  <div class="row">
+                    <div class="col-9">
+                    </div>
+                    <div class="col-3">
+                      <%= form_for ([job_offer.company, job_offer]) do |j| %>
+                      <%= j.hidden_field :is_active, :value=>true %>
+                      <%= j.submit "Habilitar", class: "btn btn-sm btn-success" %>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
           </div>
-          <% else %>
-          <p class="text-danger">
-            Oferta Pendiente de aprobación
-          </p>
-          <div class="row">
-            <div class="col-11">
-            </div>
-            <div class="col-1">
-              <p class="text-success">
-                <i class="fa fa-check text-success" data-toggle="tooltip" data-placement="top" title="Aprobar Oferta" data-container="body" data-animation="true"></i>
-              </p>
-            </div>
-          </div>
-          <% end %>
-        </td>
-        <% end %>
-      </div>
     </div>
     <br>
     <% end %>
