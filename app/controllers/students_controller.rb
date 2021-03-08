@@ -4,9 +4,9 @@ class StudentsController < ApplicationController
   # GET /students or /students.json
   def index
     if current_admin
-      @students = Student.all
+      @students = Student.search(params[:search])
     else
-      @students = Student.all.active
+      @students = Student.active.search(params[:search])
     end
     @students = @students.paginate(page: params[:page]).order(last_name: :asc).order(name: :asc)
   end
