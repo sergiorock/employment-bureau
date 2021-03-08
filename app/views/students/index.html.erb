@@ -1,7 +1,4 @@
-<p id="notice"><%= notice %></p>
-
 <h3 class="text-warning py-4">Alumnos</h3>
-
 <% if @students.count > 0 %>
 
 <table class="table">
@@ -81,20 +78,22 @@
             </button>
           <% end %>
         </td>
-        <td>
-          <%= link_to edit_student_path(student) do %>
-            <button class="btn btn-sm btn-warning btn-tooltip" type="button" data-toggle="tooltip" data-placement="top" title="Editar" data-container="body" data-animation="true">
-              <i class="fa fa-edit"></i>
-            </button>
-          <% end %>
-        </td>
-        <td>
-          <%= link_to student, method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <button class="btn btn-sm btn-danger btn-tooltip" type="button" data-toggle="tooltip" data-placement="top" title="Eliminar" data-container="body" data-animation="true">
-              <i class="fa fa-trash"></i>
-            </button>
-          <% end %>
-        </td>
+        <% if current_admin %>
+          <td>
+            <%= link_to edit_student_path(student) do %>
+              <button class="btn btn-sm btn-warning btn-tooltip" type="button" data-toggle="tooltip" data-placement="top" title="Editar" data-container="body" data-animation="true">
+                <i class="fa fa-edit"></i>
+              </button>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to student, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <button class="btn btn-sm btn-danger btn-tooltip" type="button" data-toggle="tooltip" data-placement="top" title="Eliminar" data-container="body" data-animation="true">
+                <i class="fa fa-trash"></i>
+              </button>
+            <% end %>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

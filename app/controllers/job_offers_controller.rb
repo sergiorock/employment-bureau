@@ -32,7 +32,7 @@ class JobOffersController < ApplicationController
 
     respond_to do |format|
       if @job_offer.save
-        format.html { redirect_to companies_url, notice: "Job offer was successfully created." }
+        format.html { redirect_to company_job_offer_url(@company, @job_offer), notice: "La Oferta laboral fue creada exitosamente." }
         format.json { render :show, status: :created, location: @job_offer }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -45,7 +45,7 @@ class JobOffersController < ApplicationController
   def update
     respond_to do |format|
       if @job_offer.update(job_offer_params)
-        format.html { redirect_to company_job_offer_url, notice: "Job offer was successfully updated." }
+        format.html { redirect_to company_job_offer_url, notice: "La Oferta laboral fue actualizada exitosamente." }
         format.json { render :show, status: :ok, location: @job_offer }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -58,7 +58,7 @@ class JobOffersController < ApplicationController
   def destroy
     @job_offer.destroy
     respond_to do |format|
-      format.html { redirect_to company_job_offers_url, notice: "Job offer was successfully destroyed." }
+      format.html { redirect_to company_job_offers_url, notice: "La Oferta laboral fue eliminada exitosamente." }
       format.json { head :no_content }
     end
   end

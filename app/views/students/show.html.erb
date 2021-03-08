@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<div class="py-3"></div>
 
 <div class="row">
   <div class="col-lg-12">
@@ -56,17 +56,9 @@
           <strong class="text-primary">Experiencia: </strong>
           <%= @student.experience %>
         </p>
-
-        <p class="show-info-text">
-          <strong class="text-primary">Activo: </strong>
-          <%= @student.is_active %>
-        </p>
-
       </div>
     </div>
     <br>
-    <%= link_to 'Edit', edit_student_path(@student) %> |
-    <%= link_to 'Back', students_path %>
   </div>
 </div>
 

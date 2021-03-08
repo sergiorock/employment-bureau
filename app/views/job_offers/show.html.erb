@@ -1,5 +1,4 @@
-<p id="notice"><%= notice %></p>
-
+<div class="py-3"></div>
 <div class="row">
   <div class="col-lg-12">
     <div class="card card-user">
@@ -28,20 +27,8 @@
             <%= @job_offer.company.name %>
           <% end %>
         </p>
-
-        <p class="show-info-text">
-          <strong class="text-primary">Activa: </strong>
-            <%= @job_offer.is_active %>
-        </p>
-
       </div>
     </div>
     <br>
-    <%
-=begin%>
- <%= link_to 'Edit', edit_student_path(@job_offer) %> |
-    <%= link_to 'Back', job_offer_path %>
-<%
-=end%>
   </div>
 </div>

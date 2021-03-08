@@ -14,7 +14,7 @@
             <small><%= job_offer.start_date.strftime("Publicada: %d/%m/%Y") %></small> -
             <small><%= job_offer.start_date.strftime("Expira: %d/%m/%Y") %></small>
             <% if current_admin %>
-              <div class="text-center" style="cursor: pointer">
+              <div style="cursor: pointer">
                 <% if job_offer.is_active %>
                   <p class="text-success">
                     Oferta Activa
