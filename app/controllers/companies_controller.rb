@@ -2,8 +2,9 @@ class CompaniesController < ApplicationController
   before_action :set_company, only: %i[ show edit update destroy ]
 
   # GET /companies or /companies.json
+
   def index
-    @companies = Company.all
+    @companies = Company.search(params[:search])
     @companies = @companies.paginate(page: params[:page]).order(name: :asc)
   end
 
