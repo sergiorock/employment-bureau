@@ -2,11 +2,14 @@
   <div class="col-6">
     <h3 class="text-warning py-4">Empresas</h3>
   </div>
-  <div class="col-6">
-    <%= form_tag(companies_path, method: :get, class: "py-4") do %>
-      <%= text_field_tag(:search, params[:search], class: "form-control", placeholder: "Buscar")%>
-    <% end %>
-  </div>
+
+  <% if @companies.count > 0 %>
+    <div class="col-6">
+      <%= form_tag(companies_path, method: :get, class: "py-4") do %>
+        <%= text_field_tag(:search, params[:search], class: "form-control", placeholder: "Buscar")%>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
 <% if @companies.count > 0 %>
