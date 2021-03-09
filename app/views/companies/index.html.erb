@@ -52,8 +52,6 @@
 =end%>  
         <td><%= Company::Provinces[@company.try(:province)] || @company.try(:province) %></td>
         <td><%= Company::Cities[@company.try(:city)] || @company.try(:city) %></td>
-        <td><%= company.province %></td>
-        <td><%= company.city %></td>
         <%
 =begin%>
  <td><%= company.address %></td> 
