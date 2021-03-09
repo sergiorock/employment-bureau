@@ -29,7 +29,7 @@
 
         <p class="show-info-text">
           <strong class="text-primary">Fecha de Nacimiento: </strong>
-            <%= @student.birthdate %>
+            <%= @student.birthdate.strftime("%d/%m/%Y") %>
         </p>
 
         <p class="show-info-text">

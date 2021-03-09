@@ -13,12 +13,12 @@
 
         <p class="show-info-text">
           <strong class="text-primary">Fecha de publicación: </strong>
-          <%= @job_offer.start_date %>
+          <%= @job_offer.start_date.strftime("%d/%m/%Y") %>
         </p>
 
         <p class="show-info-text">
           <strong class="text-primary">Fecha de expiración: </strong>
-          <%= @job_offer.end_date %>
+          <%= @job_offer.end_date.strftime("%d/%m/%Y") %>
         </p>
 
         <p class="show-info-text">
