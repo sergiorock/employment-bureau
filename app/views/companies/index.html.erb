@@ -8,6 +8,10 @@
     <% end %>
   </div>
 </div>
+
+<% if @companies.count > 0 %>
+
+
 <table class="table">
   <thead>
     <tr>
@@ -87,3 +91,9 @@
 <div class="digg_pagination float-right">
   <%= will_paginate @companies, :container => false %>
 </div>
+
+<% else %>
+  <div class="alert alert-info" role="alert">
+    No hay Alumnos registrados todavía.
+  </div>
+<% end %>
