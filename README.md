@@ -1,25 +1,31 @@
-# README
+# UNAJ EMPLEOS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+== Instalación
+Para poder correr la aplicación localmente
 
-Things you may want to cover:
+Debe tener instalado ruby <b> ruby '2.5.3' </b>, puede chequear la versión con el comando:
 
-* Ruby version
+  ruby -v
 
-* System dependencies
+En caso de no tener instalado <b> ruby </b> puede descargarlo desde {aquí}[https://www.ruby-lang.org/en/news/2018/10/18/ruby-2-5-3-released/]
 
-* Configuration
+In <b>Rails 2</b>, add this to your environment.rb file.
 
-* Database creation
+  config.gem "cancan"
 
-* Database initialization
+Alternatively, you can install it as a plugin.
 
-* How to run the test suite
+  rails plugin install git://github.com/ryanb/cancan.git
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+== Getting Started
 
-* ...
-# employment-bureau
+CanCan expects a +current_user+ method to exist in the controller. First, set up some authentication (such as Authlogic[https://github.com/binarylogic/authlogic] or Devise[https://github.com/plataformatec/devise]). See {Changing Defaults}[https://github.com/ryanb/cancan/wiki/changing-defaults] if you need different behavior.
+
+
+=== 1. Define Abilities
+
+
+
+
+=== 2. Check Abilities & Authorization
