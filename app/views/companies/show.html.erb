@@ -2,32 +2,32 @@
 <div class="row">
   <div class="col-3">
     <p>
-      <strong>Name:</strong>
+      <strong>Nombre:</strong>
       <%= @company.name %>
     </p>
 
     <p>
-      <strong>Cuit:</strong>
+      <strong>CUIT:</strong>
       <%= @company.cuit %>
     </p>
 
     <p>
-      <strong>Province:</strong>
-      <%= @company.province %>
+      <strong>Provincia:</strong>
+      <%= Company::Provinces[@company.try(:province)] || @company.province %>
     </p>
 
     <p>
-      <strong>City:</strong>
+      <strong>Ciudad:</strong>
       <%= @company.city %>
     </p>
 
     <p>
-      <strong>Address:</strong>
+      <strong>Dirección:</strong>
       <%= @company.address %>
     </p>
 
     <p>
-      <strong>Phone:</strong>
+      <strong>Teléfono:</strong>
       <%= @company.phone %>
     </p>
 
