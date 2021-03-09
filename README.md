@@ -1,5 +1,15 @@
 # UNAJ EMPLEOS
 
+## Demo
+
+* https://challenge-empleos-unaj.herokuapp.com/
+
+Credenciales para loguearse como administrador:
+  ```
+  admin@mail.com
+  admin123
+  ```
+
 
 ## Introducción
 
@@ -21,13 +31,15 @@ El desafío consiste en desarrollar un sistema, este debe ser un POC de una bols
 
 
 ## Instalación
-Para poder correr la aplicación localmente
 
-Debe tener instalado ruby <b> ruby '2.5.3' </b>, puede chequear la versión con el comando:
+### Para correr la aplicación localmente
 
-  ```ruby
-  ruby -v
+* Clonar el proyecto
   ```
+  https://github.com/sergiorock/employment-bureau.git
+  ```
+
+* Dentro del directorio del proyecyo
 
 En caso de no tener instalado <b> ruby </b> puede descargarlo desde [aquí](https://www.ruby-lang.org/en/news/2018/10/18/ruby-2-5-3-released)
 
