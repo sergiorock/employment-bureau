@@ -176,7 +176,8 @@ rails server
 
 ## USO
 1. **Público General**
-El público geernal podrá accder a la pantalla home del sistema, dónde se encuentran links a la sección de registración y listados de alumnos, empresas y ofertas laborales.
+
+El público general podrá acceder a la pantalla home del sistema, dónde se encuentran links a la sección de registración y listados de alumnos, empresas y ofertas laborales.
 
 [![Screen-Shot-2021-03-10-at-15-33-57.png](https://i.postimg.cc/L6tBP3mQ/Screen-Shot-2021-03-10-at-15-33-57.png)](https://postimg.cc/N50HqT9R)
 
@@ -231,7 +232,7 @@ También se pueden ver las ofertas laborales en el detalle de cada empresa. Dond
 
 [![Screen-Shot-2021-03-10-at-18-02-44.png](https://i.postimg.cc/xj7V87YQ/Screen-Shot-2021-03-10-at-18-02-44.png)](https://postimg.cc/0rpBHVbX)
 
-2. **Administrador**
+1. **Administrador**
 
 2.1 **Login**
  Un administrador del sistema puede loguearse haciendo clic en el link *Ingresar*, que se encuentra en la barra de navegación. Este link lo llevará a un formulario de login.
