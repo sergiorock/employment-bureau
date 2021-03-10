@@ -52,7 +52,7 @@ El desafío consiste en desarrollar un sistema, este debe ser un POC de una bols
   ```
 
   Rails requiere Ruby 2.7 <br>
-  En caso de no tener instalado <b> ruby </b> puede descargarlo desde [aquí](https://www.ruby-lang.org/en/news/2018/10/18/ruby-2-5-3-released/)
+  En caso de no tener instalado <b> ruby </b> puede descargarlo desde [aquí](https://www.ruby-lang.org/es/downloads/)
 
 <br>
 
@@ -127,14 +127,14 @@ El desafío consiste en desarrollar un sistema, este debe ser un POC de una bols
 development:
   <<: *default
   database: employment-bureau_development
-  username: tu_usuario_postgres
-  password: tu_contraseña_postgres
+  username: tu_usuario
+  password: tu_contraseña
 
 test:
   <<: *default
   database: employment-bureau_test
-  username: tu_usuario_postgres
-  password: tu_contraseña_postgres
+  username: tu_usuario
+  password: tu_contraseña
 
 production:
   <<: *default
@@ -173,3 +173,81 @@ rails server
   admin123
   ```
 
+
+## USO
+1. **Público General**
+El público geernal podrá accder a la pantalla home del sistema, dónde se encuentran links a la sección de registración y listados de alumnos, empresas y ofertas laborales.
+
+[![Screen-Shot-2021-03-10-at-15-33-57.png](https://i.postimg.cc/L6tBP3mQ/Screen-Shot-2021-03-10-at-15-33-57.png)](https://postimg.cc/N50HqT9R)
+
+1.1 **Registración**
+
+1.1.1 **Registrar Alumno**
+
+ Cualquier usuario del sistema puede registrarse como alumno haciendo clic en el link de registro, que se encuentra en la barra de navegación, luego en *registrar alumno*. Este link lo llevará a un formulario donde podrá cargar los datos.
+El Alumno creado quedará en estado de borrador hasta que un admnistrador lo apruebe.
+
+[![Screen-Shot-2021-03-10-at-15-52-46.png](https://i.postimg.cc/sgSXxTy1/Screen-Shot-2021-03-10-at-15-52-46.png)](https://postimg.cc/WdNjf6dP)
+
+[![Screen-Shot-2021-03-10-at-15-59-15.png](https://i.postimg.cc/FFLsDPdp/Screen-Shot-2021-03-10-at-15-59-15.png)](https://postimg.cc/23CD57xL)
+
+[![Screen-Shot-2021-03-10-at-16-07-56.png](https://i.postimg.cc/rwSr3VDh/Screen-Shot-2021-03-10-at-16-07-56.png)](https://postimg.cc/jDS2JrQN)
+
+[![Screen-Shot-2021-03-10-at-16-08-08.png](https://i.postimg.cc/zfvgx9gv/Screen-Shot-2021-03-10-at-16-08-08.png)](https://postimg.cc/cKqCHkTG)
+
+1.1.2 **Registrar Empresa**
+
+Cualquier usuario del sistema puede registrar una empresa haciendo clic en el link de registro, que se encuentra en la barra de navegación, luego en *registrar empresa*. Este link lo llevará a un formulario donde podrá cargar los datos.
+En este caso a empresa se creará inmediatamente.
+
+[![Screen-Shot-2021-03-10-at-16-16-37.png](https://i.postimg.cc/fLbBj2wf/Screen-Shot-2021-03-10-at-16-16-37.png)](https://postimg.cc/yJwm7T3D)
+
+
+1.2 **Crear Oferta Laboral**
+
+Luego de creada una empresa, el sistema te redirigirá al detalle de la misma.
+Esta pantalla está dividida en dos. Del *lado izquierdo* se encuentran los datos de la empresa y un botón que te llevará al formulario para cargar una oferta laboral.
+La Oferta Laboral creada quedará en estado de borrador hasta que un admnistrador la apruebe.
+Del lado derecho las ofertas laborales activas pertenecientes a la empresa.
+
+[![Screen-Shot-2021-03-10-at-16-16-49.png](https://i.postimg.cc/vTNwMxm5/Screen-Shot-2021-03-10-at-16-16-49.png)](https://postimg.cc/tnWMNTWg)
+
+[![Screen-Shot-2021-03-10-at-16-27-38.png](https://i.postimg.cc/prrVvHP5/Screen-Shot-2021-03-10-at-16-27-38.png)](https://postimg.cc/sGFCPbQ3)
+
+[![Screen-Shot-2021-03-10-at-16-28-57.png](https://i.postimg.cc/vZFyq9xV/Screen-Shot-2021-03-10-at-16-28-57.png)](https://postimg.cc/tY587s5q)
+
+1.3 **Vistas**
+
+El público general podrá ver los listados de Alumnos(activos), empresas y ofertas laborales(activas).
+Los listados de las entidades mencionados poseen un buscador para poder hacer búsquedas más específicas.
+
+[![Screen-Shot-2021-03-10-at-16-40-08.png](https://i.postimg.cc/pVKy22Qz/Screen-Shot-2021-03-10-at-16-40-08.png)](https://postimg.cc/xqT95V41)
+
+[![Screen-Shot-2021-03-10-at-18-06-01.png](https://i.postimg.cc/QN5ZBmMW/Screen-Shot-2021-03-10-at-18-06-01.png)](https://postimg.cc/z3Jc6nKJ)
+
+[![Screen-Shot-2021-03-10-at-18-05-14.png](https://i.postimg.cc/NMKYPwYN/Screen-Shot-2021-03-10-at-18-05-14.png)](https://postimg.cc/zbY9V6yW)
+
+También se pueden ver las ofertas laborales en el detalle de cada empresa. Donde se verán solo las publicadas por esta.
+
+[![Screen-Shot-2021-03-10-at-18-02-44.png](https://i.postimg.cc/xj7V87YQ/Screen-Shot-2021-03-10-at-18-02-44.png)](https://postimg.cc/0rpBHVbX)
+
+2. **Administrador**
+
+2.1 **Login**
+ Un administrador del sistema puede loguearse haciendo clic en el link *Ingresar*, que se encuentra en la barra de navegación. Este link lo llevará a un formulario de login.
+
+[![Screen-Shot-2021-03-10-at-17-48-35.png](https://i.postimg.cc/tCDwKMTW/Screen-Shot-2021-03-10-at-17-48-35.png)](https://postimg.cc/6y2MRzCp)
+
+[![Screen-Shot-2021-03-10-at-17-49-54.png](https://i.postimg.cc/C57rVRFS/Screen-Shot-2021-03-10-at-17-49-54.png)](https://postimg.cc/tn1N3CZM)
+
+2.2 **Aprobación, Modificación y eliminación**
+
+El administrador del sistema puede ver, habilitar y deshabilitar usuarios y ofertas de trabajo desde los listados de las mismas.
+Al loguearse como administrador también se le hablitarán los botones de  editar y eliminar usuarios y empresas.
+
+[![Screen-Shot-2021-03-10-at-16-48-47.png](https://i.postimg.cc/QtSr4yG4/Screen-Shot-2021-03-10-at-16-48-47.png)](https://postimg.cc/hzJwhMGT)
+
+[![Screen-Shot-2021-03-10-at-16-53-34.png](https://i.postimg.cc/PqkKLfpZ/Screen-Shot-2021-03-10-at-16-53-34.png)](https://postimg.cc/ZWV62SLK)
+
+2.3  **Vistas**
+El administrador tendrá disponibles todas las vistas y botones de acción sin restricción alguna.
