@@ -10,6 +10,7 @@ Credenciales para loguearse como administrador:
   admin123
   ```
 
+<br>
 
 ## Introducción
 
@@ -30,30 +31,145 @@ El desafío consiste en desarrollar un sistema, este debe ser un POC de una bols
   * Deberá tener una página de inicio que lleve a los buscadores y a la carga de los formularios.
 
 
+<br><br>
+
 ## Instalación
 
-### Para correr la aplicación localmente
+### Instalando Ruby on Rails
+  >Antes de instalar Rails debes asegurarte de que tu sistema tenga estos prerequisitos instalados
 
-* Clonar el proyecto
+  >* Ruby
+  >* PostgreSQL
+  >* Node.js
+  >* Yarn
+
+<br>
+
+### Instalando Ruby
+  Podés chequear la versión de Ruby corriendo el siguiente comando desde la terminal
   ```
-  https://github.com/sergiorock/employment-bureau.git
+  ruby --version
   ```
 
-* Dentro del directorio del proyecyo
+  Rails requiere Ruby 2.7 <br>
+  En caso de no tener instalado <b> ruby </b> puede descargarlo desde [aquí](https://www.ruby-lang.org/en/news/2018/10/18/ruby-2-5-3-released/)
 
-En caso de no tener instalado <b> ruby </b> puede descargarlo desde [aquí](https://www.ruby-lang.org/en/news/2018/10/18/ruby-2-5-3-released)
+<br>
+
+### Instalando PostgreSQL
+  Podés chequear la versión de PostgreSQL corriendo el siguiente comando desde la terminal
+  ```
+  plsql --version
+  ```
+
+  En caso de no tener instalado <b> PostgreSQL </b> puede descargarlo desde [aquí](https://www.postgresql.org/download/)
+
+<br>
+
+### Instalando Node.js y Yarn
+  Podés chequear la versión de Node corriendo el siguiente comando desde la terminal
+  ```
+  node --version
+  ```
+
+  En caso de no tener instalado <b> Node.js </b> puede descargarlo desde [aquí](https://nodejs.org/es/download/)
+
+  <br>
+
+  Podés chequear la versión de Yarn corriendo el siguiente comando desde la terminal
+  ```
+  yarn --version
+  ```
+
+  En caso de no tener instalado <b> Yarn </b> puede seguir las instrucciones de instalación desde su [web](https://classic.yarnpkg.com/en/docs/install)
 
 
+<br>
 
+### Instalando Ruby on Rails
+  Para instalar Ruby on Rails usa la gema provista por RubyGems
+   ```
+  gem install rails -v 5.2.4.5
+  ```
 
-== Getting Started
+  Instalar gema bundler
+  ```
+  gem install bundler
+  ```
 
-CanCan expects a +current_user+ method to exist in the controller. First, set up some authentication (such as Authlogic[https://github.com/binarylogic/authlogic] or Devise[https://github.com/plataformatec/devise]). See {Changing Defaults}[https://github.com/ryanb/cancan/wiki/changing-defaults] if you need different behavior.
+<br>
 
+### Clonando el repositorio
+  Para clonar el repositorio del proyecto ejecute el siguiente comando en la terminal
+   ```
+  git clone https://github.com/sergiorock/employment-bureau.git
+  ```
 
-=== 1. Define Abilities
+<br>
 
+### Instalando dependencias
+  Posicionarse dentro del repositorio y ejecutar
+  ```
+  bundle install
+  ```
 
+### Configurando Base de Datos
+  Asegurese que su archivo database.yml se vea así
 
+  ```
+  default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-=== 2. Check Abilities & Authorization
+development:
+  <<: *default
+  database: employment-bureau_development
+  username: tu_suario_postgres
+  password: tu_contraseña_postgres
+
+test:
+  <<: *default
+  database: employment-bureau_test
+  username: tu_suario_postgres
+  password: tu_contraseña_postgres
+
+production:
+  <<: *default
+  database: employment-bureau_production
+  username: employment-bureau
+  password: <%= ENV['EMPLOYMENT-BUREAU_DATABASE_PASSWORD'] %>
+  ```
+
+### Creando Base de Datos
+En la terminal ejecutar el siguiente comando para crear la base de datos
+```
+rails db:create
+```
+
+Luego para correr las migraciones
+```
+rails db:migrate
+```
+
+Y por último para crear las seeds
+```
+rails db:seed
+```
+
+<br>
+
+### Corriendo la aplicación
+Para levantar el server ejecutar en la consola
+```
+rails server
+```
+
+  Credenciales para loguearse como administrador:
+  ```
+  admin@mail.com
+  admin123
+  ```
+
