@@ -127,13 +127,13 @@ El desafío consiste en desarrollar un sistema, este debe ser un POC de una bols
 development:
   <<: *default
   database: employment-bureau_development
-  username: tu_suario_postgres
+  username: tu_usuario_postgres
   password: tu_contraseña_postgres
 
 test:
   <<: *default
   database: employment-bureau_test
-  username: tu_suario_postgres
+  username: tu_usuario_postgres
   password: tu_contraseña_postgres
 
 production:
@@ -149,7 +149,7 @@ En la terminal ejecutar el siguiente comando para crear la base de datos
 rails db:create
 ```
 
-Luego para correr las migraciones
+Luego, para correr las migraciones
 ```
 rails db:migrate
 ```
